@@ -9,15 +9,15 @@
       <h1 class="card-title">PENGADUAN MASYARAKAT</h1>
     </div>
     <!-- /.card-header -->
-
+    <div class="col-md-12">
       <div class="card-body">
         <div class="form-group">
-          <label for="">Nama Pelapor</label>
-          <input type="text" name="tanggal" id="tanggal" value="{{ $pengaduan->users_id }}" disabled>
+          <label> Nama Pelapor</label>
+          <input type="text" name="tanggal" id="tanggal" value="{{ $pengaduans->user->name }}" disabled>
         </div>
         <div class="form-group">
-          <label for="">Tanggal Pengaduan</label>
-          <input type="text" name="tanggal" id="tanggal" value="{{ $pengaduan->tgl_pengaduan }}" disabled>
+          <label> Tanggal Pengaduan</label>
+          <input type="text" name="tanggal" id="tanggal" value="{{ $pengaduans->tgl_pengaduan }}" disabled>
         </div>
           <div class="form-group">
             <label for="Alamat">Isi Laporan</label>
@@ -25,11 +25,11 @@
             disabled
               class="form-control" 
               name="isi_laporan" rows="5" 
-              id="isi_laporan" placeholder="isi_laporan">{{ $pengaduan->isi_laporan }}</textarea>
+              id="isi_laporan" placeholder="isi_laporan">{{ $pengaduans->isi_laporan }}</textarea>
           </div>
           <div class="form-group" >
             <label for="formFile" class="form-label">Foto</label>
-            <img src="{{ url('storage/' . $pengaduan->foto) }}" alt="" srcset="">
+            <img width="100%" height="100%"src="{{ url('storage/' . $pengaduans->foto) }}" alt="" srcset="">
           </div>  
       </p>
     </div>

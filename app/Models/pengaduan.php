@@ -16,7 +16,6 @@ class Pengaduan extends Model
      'isi_laporan',
      'foto',
      'status',
-     'email'
     ];
 
     public function user()

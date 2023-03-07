@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pengaduan;
+use App\Models\Tanggapan;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -73,12 +74,13 @@ class PengaduanController extends Controller
      * @param  \App\Models\Pengaduan  $pengaduan
      * @return \Illuminate\Http\Response
      */
-    public function show(Pengaduan $pengaduan)
+    public function show(Pengaduan $pengaduan,Tanggapan $tanggapan)
     {
         //
+        $tanggapans = Tanggapan::all();
         // $pengaduans = Pengaduan::all()->where('id', $pengaduan->id);
         $pengaduans = Pengaduan::find($pengaduan->id);
-        return view('pengaduan.show', compact('pengaduan'));
+        return view('pengaduan.show', compact('pengaduans','tanggapans'));
     }
 
     /**
